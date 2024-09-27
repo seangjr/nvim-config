@@ -6,7 +6,7 @@ return {
 			vim.list_extend(opts.ensure_installed, {
 				"luacheck",
 				"shellcheck",
-				"shfmt",
+				-- "shfmt",
 				"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
@@ -20,19 +20,18 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			inlay_hints = { enabled = true },
-			---@type lspconfig.options
 			servers = {
 				cssls = {},
         biome = {},
 				tailwindcss = {
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
+					-- root_dir = function(...)
+					-- 	return require("lspconfig.util").root_pattern(".git")(...)
+					-- end,
 				},
 				tsserver = {
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
+					-- root_dir = function(...)
+					-- 	return require("lspconfig.util").root_pattern(".git")(...)
+					-- end,
 					single_file_support = false,
           on_attach = function(client)
             client.server_capabilities.documentFormattingProvider = false
